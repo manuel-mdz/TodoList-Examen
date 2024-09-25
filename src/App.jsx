@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import TodoList from './components/ListaTareas';
+import ListaTareas from './components/ListaTareas'; // Nombre actualizado
 import SearchBar from './components/SearchBar';
 import TodoForm from './components/TodoForm';
+
+import './App.css';
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -24,11 +26,11 @@ const App = () => {
   );
 
   return (
-    <div>
+    <div className="container">
       <h1>Lista de Tareas</h1>
       <SearchBar search={search} setSearch={setSearch} />
       <TodoForm addTodo={addTodo} />
-      <TodoList 
+      <ListaTareas 
         todos={filteredTodos} 
         deleteTodo={deleteTodo} 
         editTodo={editTodo} 
